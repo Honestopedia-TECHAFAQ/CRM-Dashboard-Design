@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Custom styles go here */
+        #sidebar {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        #header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        #content {
+            padding: 20px;
+        }
+    </style>
+    <title>Zoho CRM Layout By Afaq Ahmad</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div id="sidebar">
+                    <h5>Menu</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item">Dashboard</li>
+                        <li class="list-group-item">Leads</li>
+                        <li class="list-group-item">Contacts</li>
+                        <li class="list-group-item">Opportunities</li>
+                        <li class="list-group-item">Accounts</li>
+                        <li class="list-group-item">Tasks</li>
+                        <li class="list-group-item">Calendar</li>
+                        <li class="list-group-item">Reports</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div id="header">
+                    <h2>Zoho CRM</h2>
+                    <button class="btn btn-primary">Create</button>
+                    <button class="btn btn-success">Save</button>
+                </div>
+                <div id="content">
+                    <h3>Dashboard</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Leads</h5>
+                                    <p class="card-text">Total Leads: 150</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Opportunities</h5>
+                                    <p class="card-text">Total Opportunities: 50</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <canvas id="myChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [{
+                    label: 'Monthly Sales',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
